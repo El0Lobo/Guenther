@@ -10,7 +10,7 @@ body {
     margin: auto;
     background-image: url('pics/paper-old-texture-parchment-f1deb45b9b12c58bd345ea7a3ac04984.jpg');
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 9px solid #2c2825;
     background-size: contain;
     box-sizing: border-box;
 }
