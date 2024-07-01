@@ -33,7 +33,7 @@ body {
 }
 
 .content img {
-    width: 100%;
+    width: 75%;
     height: auto;
 }
 
@@ -160,3 +160,15 @@ body {
     clip-rule: evenodd;
     fill: #3475ae;
 }
+
+@font-face {
+    font-family: 'CarnevaleeFreakshow';
+    src: url('assets/Carnevalee Freakshow.ttf') format('truetype');
+}
+
+.custom-font {
+    font-family: 'CarnevaleeFreakshow', sans-serif;
+    text-decoration: underline;
+    font-size: 55px;
+    color: #302a26;
+  }
