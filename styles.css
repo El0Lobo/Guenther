@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #262626;
+}
+
+.flyer {
+    max-width: 600px;
+    margin: auto;
+    background-image: url('pics/paper-old-texture-parchment-f1deb45b9b12c58bd345ea7a3ac04984.jpg');
+    background-color: #fff;
+    border: 1px solid #ddd;
+    background-size: contain;
+    box-sizing: border-box;
+}
+
+.header {
+    color: transparent;
+    text-align: center;
+    background-size: cover;
+    pointer-events: none;
+    cursor: none;
+}
+
+.header p {
+    margin: 5px 0;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+}
+
+.content h1 {
+    font-size: 1.5em;
+    color: #730f0f;
+}
+
+.price {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.price3 {
+    background-color: #730f0f;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 2.5em;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.price3 p {
+    margin: 0;
+}
+
+.price2 {
+    position: absolute;
+    right: 4px;
+    top: -64%;
+    width: 120px;
+    height: 120px;
+}
+
+#burst-12 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#burst-12 svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#burst-12 span {
+    position: relative;
+    display: block;
+    text-align: center;
+    z-index: 1;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 14px;
+    top: 28px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    background-color: #730f0f;
+    color: white;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .price {
+        flex-direction: column;
+    }
+    .price3 {
+        margin-bottom: 10px;
+    }
+    .price2 {
+        margin-top: 21px;
+        width: 90px;
+        height: 90px;
+        font-size: 10px;
+    }
+}
+
+.st0 {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: #3475ae;
+}
