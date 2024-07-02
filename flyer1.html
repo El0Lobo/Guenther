@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metzgerei Günther Flyer</title>
     <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.0.0/introjs.min.css">
 </head>
 <body>
     <div class="flyer">
-        <div class="header">
-            <img src="pics/logo background small.png" alt="logo small" class="header-img">
+        <div class="header" data-intro="Unser Logo mit dem Hintergrund der Höri und der stilisierten Kuh.">
+            <img src="pics/logo background small.png" alt="Logo mit Hintergrund der Höri und stilisierter Kuh" class="header-img">
         </div>
-        <div class="content">
+        <div class="content" data-intro="Hier sehen Sie unsere wöchentlich wechselnden Gerichte, die dynamisch angezeigt werden.">
             <h1>Wechselnde Gerichte <br>jeden Freitag<br> zum Feierabend von<br> 16 bis 18 Uhr</h1>
             <h2 class="custom-font">Diese Woche:</h2>
-            <img id="dish-image" src="pics/Layer1.png" alt="Dish Image" class="content-img">
-            <h2 id="dish-name" class="dish-name">Bratwurst mit Potato Wedges</h2>
-            <div class="price">
+            <img id="dish-image" src="pics/Layer1.png" alt="Gericht Bild" class="content-img">
+            <h2 id="dish-name" class="dish-name" data-intro="Der Name und das Bild des Gerichts aktualisieren sich automatisch.">Bratwurst mit Potato Wedges</h2>
+            <div class="price" data-intro="Unterschiedliche Preise für Dine-In und To-Go.">
                 <div class="price3">
                     <p id="price-dinein">7,60 €</p>
                 </div>
@@ -35,12 +36,17 @@
                 </div>
             </div>
         </div>
-        <p style="text-align: center;margin: 5px;padding: 5px;">Genießen Sie außerdem unsere exklusive Auswahl an DRY AGED Fleisch – perfekt zum Mitnehmen oder Bestellen!</p>
-        <div class="footer">
+        <p style="text-align: center;margin: 5px;padding: 5px;" data-intro="Genießen Sie auch unser exklusives DRY AGED Fleisch, perfekt zum Mitnehmen oder Bestellen!">Genießen Sie außerdem unsere exklusive Auswahl an DRY AGED Fleisch – perfekt zum Mitnehmen oder Bestellen!</p>
+        <div class="footer" data-intro="Im Footer finden Sie unsere Kontaktinformationen und einen Link zur Website des Entwicklers.">
             <p>Metzgerei Günther, Schlesierstr. 29, 78315 Radolfzell</p>
             <p>Tel.: +49 (0) 7732 52876 | Email: <a href="mailto:info@guenther-metzgerei.de">info@guenther-metzgerei.de</a></p>
             <p><a href="http://www.guenther-metzgerei.de">www.guenther-metzgerei.de</a></p>
             <button onclick="nextDish()">Nächstes Gericht</button>
+            <button onclick="startTour()">Tour starten</button>
+            <p>&copy; 2024. All Rights Reserved. Developed by 
+                <a href="https://acme-prototypes.com/" class="acme-link">
+                    <img src="pics/ACME (Small).png" alt="ACME" class="acme-logo" style="width: 70px;position: relative;top: 7px;">                </a>
+            </p>
         </div>
     </div>
 
@@ -60,7 +66,7 @@
             const oneJan = new Date(date.getFullYear(), 0, 1);
             const numberOfDays = Math.floor((date - oneJan) / (24 * 60 * 60 * 1000));
             const weekNumber = Math.ceil((date.getDay() + 1 + numberOfDays) / 7);
-            console.log(`Current date: ${date.toDateString()}, Calendar Week: ${weekNumber}`);
+            console.log(`Aktuelles Datum: ${date.toDateString()}, Kalenderwoche: ${weekNumber}`);
             return weekNumber;
         }
 
@@ -72,11 +78,48 @@
         }
 
         const currentWeekIndex = getCurrentWeekIndex();
-        const initialDish = weekDishMap[currentWeekIndex] || dishes[0]; // Default to first dish if no mapping exists
+        const initialDish = weekDishMap[currentWeekIndex] || dishes[0]; // Standard auf erstes Gericht, falls keine Zuordnung vorhanden
         updateFlyer(initialDish);
 
-        // Expose nextDish to global scope
+        // Expose nextDish and startTour to global scope
         window.nextDish = nextDish;
+        window.startTour = function() {
+            introJs().setOptions({
+                steps: [
+                    {
+                        intro: "Willkommen bei der geführten Tour durch unseren neuen HTML-Flyer!"
+                    },
+                    {
+                        element: document.querySelector('.header'),
+                        intro: "Ihr Logo in szene gesetzt vor der Höri und einer modernen stilisierten Grafik."
+                    },
+                    {
+                        element: document.querySelector('.content'),
+                        intro: "Hier sehen Sie ihre wöchentlich wechselnden Gerichte, die dynamisch nach Kalenderwoche angezeigt werden."
+                    },
+                    {
+                        element: document.getElementById('dish-name'),
+                        intro: "Der Name und das Bild des Gerichts aktualisieren sich automatisch."
+                    },
+                    {
+                        element: document.querySelector('.price'),
+                        intro: "Unterschiedliche Preise für Dine-In und To-Go."
+                    },
+                    {
+                        element: document.querySelector('.footer'),
+                        intro: "Im Footer finden Sie ihre Kontaktinformationen die direkte links zu ihren anderen Formaten sind."
+                    },
+                    {
+                        intro: "Warum HTML und nicht nur ein PNG-Bild? Mit HTML können wir SEO verbessern, da Suchmaschinen den Text lesen können. Außerdem sind unsere Inhalte zugänglicher für Menschen mit Behinderungen, die Screenreader verwenden. All diese Vorteile helfen, die Sichtbarkeit und Benutzerfreundlichkeit unserer Inhalte zu erhöhen."
+                    },
+                    {
+                        intro: "Um die Gerichte zu ändern, bearbeiten Sie einfach das Array im Skript 'dishes.js'. Hier können Sie den Namen, das Bild und die Preise für jedes Gericht anpassen. Zum Beispiel: { name: 'Bratwurst mit Potato Wedges', image: 'pics/Layer1.png', priceDineIn: '7,60 €', priceToGo: 'To Go: <br> 6,90 €' }. Fügen Sie einfach ein Foto des neuen Gerichts hinzu und passen Sie den Namen und Preis an. Die Zuordnung der Gerichte zu den Kalenderwochen finden Sie im Skript 'weekDishMap.js'. Hier legen Sie fest, welches Gericht in welcher Woche angezeigt wird, z.B.: export const weekDishMap = { 1: dishes[0], 2: dishes[1], 3: dishes[0], 4: dishes[1] }. Diese HTML-Datei kann dann auf die internen Displays im Laden übertragen werden, um die Gerichte dynamisch anzuzeigen."
+                    }
+
+                ]
+            }).start();
+        };
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.0.0/intro.min.js"></script>
 </body>
 </html>
