@@ -132,7 +132,7 @@ body {
         margin-bottom: 10px;
     }
     .price2 {
-        margin-top: 21px;
+        margin-top: 0;
         width: 90px;
         height: 90px;
         font-size: 10px;
@@ -147,7 +147,7 @@ body {
         background-color: #730f0f;
         color: white;
         position: relative;
-        width: 95%;
+        width: 94%;
         left: 0%;
         overflow: hidden;
       }
@@ -171,7 +171,7 @@ body {
         margin-bottom: 10px;
     }
     .price2 {
-        margin-top: 21px;
+        margin-top: 0;
         width: 90px;
         height: 90px;
         font-size: 10px;
