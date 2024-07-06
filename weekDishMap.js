@@ -29,7 +29,7 @@ export const weekDishMap = {
     26: dishes[1], // Week 26
     27: dishes[0], // Week 27
     28: dishes[3], // Week 28
-    29: dishes[0], // Week 29
+    29: dishes[4], // Week 29
     30: dishes[1], // Week 30
     31: dishes[0], // Week 31
     32: dishes[1], // Week 32

@@ -28,6 +28,13 @@ export const dishes = [
         priceDineIn: "11,00 €",
         priceToGo: "To Go: <br> 9,90 €"
     },
+    // 4: Curry
+    {
+        name: "Currywurst mit Pommes",
+        image: "pics/curry.png",
+        priceDineIn: "7,60 €",
+        priceToGo: "To Go: <br> 6,90 €"
+    },
     
     // Add more dishes here
 ];
