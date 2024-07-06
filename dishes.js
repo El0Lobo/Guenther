@@ -14,12 +14,20 @@ export const dishes = [
         priceDineIn: "8,50 €",
         priceToGo: "To Go: <br> 7,80 €"
     },
-    // 3: Rouladen mit Kartoffeln
+    // 2: Rouladen mit Kartoffeln
     {
         name: "Rouladen mit Kartoffeln",
         image: "pics/Layer3.png",
         priceDineIn: "6,50 €",
         priceToGo: "To Go: <br> 5,80 €"
     },
+    // 3: Burger
+    {
+        name: "Günter's Burger vom Rind mit Pommes",
+        image: "pics/burger.png",
+        priceDineIn: "11,00 €",
+        priceToGo: "To Go: <br> 9,90 €"
+    },
+    
     // Add more dishes here
 ];
